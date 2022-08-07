@@ -43,10 +43,10 @@ class BookingController extends Controller
             $slotid = $request->slotid;
             $day_id  = $request->dayid;
             $date =  $request->date; 
-            $day = Carbon::createFromFormat('d-m-Y', $date)->format('l'); 
-            $dayId = day::select('id')->where('day', $day)->first();
-            $dayId = $dayId->id;
-            $data = Booking::where('userid','=',$userid)->select('userid')->get(); 
+            //$day = Carbon::createFromFormat('d-m-Y', $date)->format('l'); 
+            //$dayId = day::select('id')->where('day', $day)->first();
+            //$dayId = $dayId->id;
+            //$data = Booking::where('userid','=',$userid)->select('userid')->get(); 
             $datebooking = Booking::where('date','=', $date)->select('userid')->get(); 
             $count =count($datebooking); 
             $currentmonth = Carbon::now()->month; 
